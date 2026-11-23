@@ -13,6 +13,12 @@ pipeline {
                 bat 'npx playwright install chromium'
             }
         }
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm ci'
+                bat 'npx playwright install firefox'
+            }
+        }
         stage('Run Playwright Tests') {
             steps {
                 bat 'npx playwright test'
