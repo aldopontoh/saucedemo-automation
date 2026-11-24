@@ -7,10 +7,17 @@
     "test:firefox": "npx playwright test --project=firefox --workers=1",
     "test:edge": "npx playwright test --project=edge --workers=1",
     "test:all-browsers": "npx playwright test --project=chrome --project=firefox --project=edge --workers=1",
+    "bdd:gen": "bddgen",
+    "test:bdd": "bddgen && playwright test --project=bdd-chrome",
+    "test:bdd:firefox": "bddgen && playwright test --project=bdd-firefox --workers=1",
+    "test:bdd:edge": "bddgen && playwright test --project=bdd-edge --workers=1",
+    "test:bdd:all-browsers": "bddgen && playwright test --project=bdd-chrome --project=bdd-firefox --project=bdd-edge --workers=1",
+    "test:all": "bddgen && playwright test",
     "install:firefox": "npx playwright install firefox",
     "report": "npx playwright show-report"
   },
   "devDependencies": {
-    "@playwright/test": "^1.46.0"
+    "@playwright/test": "^1.46.0",
+    "playwright-bdd": "^9.2.1"
   }
 }

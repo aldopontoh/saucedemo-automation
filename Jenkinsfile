@@ -13,6 +13,11 @@ pipeline {
                 bat 'npx playwright install chromium firefox'
             }
         }
+        stage('Generate BDD Tests') {
+            steps {
+                bat 'npx bddgen'
+            }
+        }
         stage('Run Playwright Tests') {
             steps {
                 bat 'npx playwright test'
